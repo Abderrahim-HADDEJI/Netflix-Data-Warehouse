@@ -1,0 +1,2168 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/27/2022 8:42:13 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-EP6LIQN"
+  DTS:CreatorName="DESKTOP-EP6LIQN\Saif"
+  DTS:DTSID="{DA75774B-1B8D-42FF-AA9F-6EB134318D02}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.521.0"
+  DTS:LocaleID="1036"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="22"
+  DTS:VersionGUID="{E0D344F9-1F61-4334-8F05-38017D648399}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-EP6LIQN.Netflix_titles_database]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{1D0D125F-123F-4A62-9E4D-BF80DCC4A311}"
+      DTS:ObjectName="DESKTOP-EP6LIQN.Netflix_titles_database">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-EP6LIQN;Initial Catalog=Netflix_titles_database;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[netflix_titles_with_IMDB_edution_connection]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{0E9F0B1D-452C-42AE-B9E7-6EF5C59FED31}"
+      DTS:ObjectName="netflix_titles_with_IMDB_edution_connection">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1036"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\Saif\Analyse titres Netflix Ratings iMDB\Sources\netflix_titles_with_IMDB_edution.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id"
+              DTS:DTSID="{E43A0809-23A4-4635-9437-0602E5817140}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="show_id"
+              DTS:DTSID="{88F3B05A-445C-4717-99AC-9D6D2001502B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="type"
+              DTS:DTSID="{E0BD1501-F23B-47C1-938D-D94A8675C8E9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="title"
+              DTS:DTSID="{1A0B76B6-90D9-4633-9D2F-A70B73BBC903}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="director"
+              DTS:DTSID="{B26A9ADE-E6AE-440B-92DB-A01A29824F4C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cast"
+              DTS:DTSID="{EE5E0BDD-4A52-4324-BACF-2FF2B316AC07}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="country"
+              DTS:DTSID="{EAC13DDB-22B0-48C4-B067-E9A9DFC4D48D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="date_added"
+              DTS:DTSID="{9BBB4AB4-51CD-47D8-8FFA-9E6121A2F7A1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="release_year"
+              DTS:DTSID="{1D5A15F9-51D9-4BEE-BA2C-62E70F6DF5C8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="rating"
+              DTS:DTSID="{C665C8F0-6FAA-47E8-8D1F-97EA20E27674}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="duration"
+              DTS:DTSID="{8AB603DF-6BE6-4364-8840-8A2382B8105A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="listed_in"
+              DTS:DTSID="{FCA363F6-6C3A-44B9-A4D8-3F3B5C9C0E56}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="description"
+              DTS:DTSID="{D94F7972-7DE2-4858-9B5C-7CFAAACD0CD3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="IMDB_numvotes"
+              DTS:DTSID="{E76FAE75-FACA-4807-8156-C5137B7862DC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="IMDB_rating"
+              DTS:DTSID="{C14038B5-0BB5-4001-99E6-59E83B605F76}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Tâche de flux de données"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{D0C48DEA-3553-4A69-B204-204D4E2816EC}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tâche de flux de données"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Tâche de flux de données\Dim_date"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="Dim_date"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[Dim_date]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tâche de flux de données\Dim_date.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-EP6LIQN.Netflix_titles_database]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-EP6LIQN.Netflix_titles_database]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tâche de flux de données\Dim_date.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Dim_date.Inputs[Entrée de destination OLE DB].Columns[show_id]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="show_id"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Dim_date.Inputs[Entrée de destination OLE DB].ExternalColumns[show_id]"
+                      lineageId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[show_id]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Dim_date.Inputs[Entrée de destination OLE DB].Columns[date_added]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="date_added"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Dim_date.Inputs[Entrée de destination OLE DB].ExternalColumns[date_added]"
+                      lineageId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[date_added]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Dim_date.Inputs[Entrée de destination OLE DB].Columns[release_year]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="release_year"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Dim_date.Inputs[Entrée de destination OLE DB].ExternalColumns[release_year]"
+                      lineageId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[release_year]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Dim_date.Inputs[Entrée de destination OLE DB].ExternalColumns[date_id]"
+                      dataType="i4"
+                      name="date_id" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Dim_date.Inputs[Entrée de destination OLE DB].ExternalColumns[show_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="show_id" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Dim_date.Inputs[Entrée de destination OLE DB].ExternalColumns[date_added]"
+                      dataType="wstr"
+                      length="50"
+                      name="date_added" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Dim_date.Inputs[Entrée de destination OLE DB].ExternalColumns[release_year]"
+                      dataType="wstr"
+                      length="50"
+                      name="release_year" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tâche de flux de données\Dim_date.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\Tâche de flux de données\Dim_date.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Dim_date.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Dim_date.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Dim_date.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Dim_date.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tâche de flux de données\Dim_information"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="Dim_information"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[Dim_information]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tâche de flux de données\Dim_information.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-EP6LIQN.Netflix_titles_database]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-EP6LIQN.Netflix_titles_database]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tâche de flux de données\Dim_information.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Dim_information.Inputs[Entrée de destination OLE DB].Columns[show_id]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="show_id"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Dim_information.Inputs[Entrée de destination OLE DB].ExternalColumns[show_id]"
+                      lineageId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[show_id]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Dim_information.Inputs[Entrée de destination OLE DB].Columns[type]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="type"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Dim_information.Inputs[Entrée de destination OLE DB].ExternalColumns[type]"
+                      lineageId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[type]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Dim_information.Inputs[Entrée de destination OLE DB].Columns[title]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="title"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Dim_information.Inputs[Entrée de destination OLE DB].ExternalColumns[title]"
+                      lineageId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[title]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Dim_information.Inputs[Entrée de destination OLE DB].Columns[duration]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="duration"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Dim_information.Inputs[Entrée de destination OLE DB].ExternalColumns[duration]"
+                      lineageId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[duration]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Dim_information.Inputs[Entrée de destination OLE DB].Columns[listed_in]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="listed_in"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Dim_information.Inputs[Entrée de destination OLE DB].ExternalColumns[listed_in]"
+                      lineageId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[listed_in]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Dim_information.Inputs[Entrée de destination OLE DB].Columns[description]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="description"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Dim_information.Inputs[Entrée de destination OLE DB].ExternalColumns[description]"
+                      lineageId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[description]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Dim_information.Inputs[Entrée de destination OLE DB].ExternalColumns[information_id]"
+                      dataType="i4"
+                      name="information_id" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Dim_information.Inputs[Entrée de destination OLE DB].ExternalColumns[show_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="show_id" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Dim_information.Inputs[Entrée de destination OLE DB].ExternalColumns[title]"
+                      dataType="wstr"
+                      length="50"
+                      name="title" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Dim_information.Inputs[Entrée de destination OLE DB].ExternalColumns[type]"
+                      dataType="wstr"
+                      length="50"
+                      name="type" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Dim_information.Inputs[Entrée de destination OLE DB].ExternalColumns[listed_in]"
+                      dataType="nText"
+                      name="listed_in" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Dim_information.Inputs[Entrée de destination OLE DB].ExternalColumns[description]"
+                      dataType="nText"
+                      name="description" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Dim_information.Inputs[Entrée de destination OLE DB].ExternalColumns[duration]"
+                      dataType="wstr"
+                      length="50"
+                      name="duration" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tâche de flux de données\Dim_information.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\Tâche de flux de données\Dim_information.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Dim_information.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Dim_information.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Dim_information.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Dim_information.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tâche de flux de données\Dim_production"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="Dim_production"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[Dim_production]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tâche de flux de données\Dim_production.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-EP6LIQN.Netflix_titles_database]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-EP6LIQN.Netflix_titles_database]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tâche de flux de données\Dim_production.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Dim_production.Inputs[Entrée de destination OLE DB].Columns[show_id]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="show_id"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Dim_production.Inputs[Entrée de destination OLE DB].ExternalColumns[show_id]"
+                      lineageId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[show_id]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Dim_production.Inputs[Entrée de destination OLE DB].Columns[director]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="director"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Dim_production.Inputs[Entrée de destination OLE DB].ExternalColumns[director]"
+                      lineageId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[director]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Dim_production.Inputs[Entrée de destination OLE DB].Columns[cast]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="cast"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Dim_production.Inputs[Entrée de destination OLE DB].ExternalColumns[cast]"
+                      lineageId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[cast]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Dim_production.Inputs[Entrée de destination OLE DB].Columns[country]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="country"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Dim_production.Inputs[Entrée de destination OLE DB].ExternalColumns[country]"
+                      lineageId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[country]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Dim_production.Inputs[Entrée de destination OLE DB].ExternalColumns[production_id]"
+                      dataType="i4"
+                      name="production_id" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Dim_production.Inputs[Entrée de destination OLE DB].ExternalColumns[show_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="show_id" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Dim_production.Inputs[Entrée de destination OLE DB].ExternalColumns[director]"
+                      dataType="wstr"
+                      length="50"
+                      name="director" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Dim_production.Inputs[Entrée de destination OLE DB].ExternalColumns[cast]"
+                      dataType="nText"
+                      name="cast" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Dim_production.Inputs[Entrée de destination OLE DB].ExternalColumns[country]"
+                      dataType="wstr"
+                      length="50"
+                      name="country" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tâche de flux de données\Dim_production.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\Tâche de flux de données\Dim_production.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Dim_production.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Dim_production.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Dim_production.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Dim_production.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tâche de flux de données\Dim_rating"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="Dim_rating"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[Dim_rating]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tâche de flux de données\Dim_rating.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-EP6LIQN.Netflix_titles_database]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-EP6LIQN.Netflix_titles_database]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tâche de flux de données\Dim_rating.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Dim_rating.Inputs[Entrée de destination OLE DB].Columns[show_id]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="show_id"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Dim_rating.Inputs[Entrée de destination OLE DB].ExternalColumns[show_id]"
+                      lineageId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[show_id]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Dim_rating.Inputs[Entrée de destination OLE DB].Columns[rating]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="rating"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Dim_rating.Inputs[Entrée de destination OLE DB].ExternalColumns[rating]"
+                      lineageId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[rating]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Dim_rating.Inputs[Entrée de destination OLE DB].Columns[IMDB_numvotes]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="IMDB_numvotes"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Dim_rating.Inputs[Entrée de destination OLE DB].ExternalColumns[IMDB_numvotes]"
+                      lineageId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[IMDB_numvotes]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Dim_rating.Inputs[Entrée de destination OLE DB].Columns[IMDB_rating]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="IMDB_rating"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Dim_rating.Inputs[Entrée de destination OLE DB].ExternalColumns[IMDB_rating]"
+                      lineageId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[IMDB_rating]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Dim_rating.Inputs[Entrée de destination OLE DB].ExternalColumns[rating_id]"
+                      dataType="i4"
+                      name="rating_id" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Dim_rating.Inputs[Entrée de destination OLE DB].ExternalColumns[show_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="show_id" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Dim_rating.Inputs[Entrée de destination OLE DB].ExternalColumns[rating]"
+                      dataType="wstr"
+                      length="50"
+                      name="rating" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Dim_rating.Inputs[Entrée de destination OLE DB].ExternalColumns[IMDB_numvotes]"
+                      dataType="wstr"
+                      length="50"
+                      name="IMDB_numvotes" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Dim_rating.Inputs[Entrée de destination OLE DB].ExternalColumns[IMDB_rating]"
+                      dataType="wstr"
+                      length="50"
+                      name="IMDB_rating" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tâche de flux de données\Dim_rating.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\Tâche de flux de données\Dim_rating.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Dim_rating.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Dim_rating.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Dim_rating.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Dim_rating.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tâche de flux de données\Multidiffusion"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multidiffusion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Distribue chaque ligne d'entrée à chaque ligne dans au moins une sortie. Par exemple, connectez votre flux de données pour effectuer une copie des données afin que certaines valeurs puissent être masquées avant de les partager avec des partenaires externes."
+              name="Multidiffusion">
+              <inputs>
+                <input
+                  refId="Package\Tâche de flux de données\Multidiffusion.Inputs[Multidiffusion entrée 1]"
+                  name="Multidiffusion entrée 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tâche de flux de données\Multidiffusion.Outputs[Sortie de multidiffusion 4]"
+                  deleteOutputOnPathDetached="true"
+                  name="Sortie de multidiffusion 4"
+                  synchronousInputId="Package\Tâche de flux de données\Multidiffusion.Inputs[Multidiffusion entrée 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Tâche de flux de données\Multidiffusion.Outputs[Sortie de multidiffusion 1]"
+                  deleteOutputOnPathDetached="true"
+                  name="Sortie de multidiffusion 1"
+                  synchronousInputId="Package\Tâche de flux de données\Multidiffusion.Inputs[Multidiffusion entrée 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Tâche de flux de données\Multidiffusion.Outputs[Sortie de multidiffusion 2]"
+                  deleteOutputOnPathDetached="true"
+                  name="Sortie de multidiffusion 2"
+                  synchronousInputId="Package\Tâche de flux de données\Multidiffusion.Inputs[Multidiffusion entrée 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Tâche de flux de données\Multidiffusion.Outputs[Sortie de multidiffusion 3]"
+                  deleteOutputOnPathDetached="true"
+                  name="Sortie de multidiffusion 3"
+                  synchronousInputId="Package\Tâche de flux de données\Multidiffusion.Inputs[Multidiffusion entrée 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Tâche de flux de données\Multidiffusion.Outputs[Sortie de multidiffusion 5]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Sortie de multidiffusion 5"
+                  synchronousInputId="Package\Tâche de flux de données\Multidiffusion.Inputs[Multidiffusion entrée 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Source du fichier plat;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Source du fichier plat"
+              localeId="1036"
+              name="netflix_titles_with_IMDB_edution"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Spécifie si les colonnes dont la longueur est zéro sont traitées comme des valeurs NULL."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom d'une colonne de sortie contenant le nom du fichier. Si aucun nom n'est spécifié, aucune colonne de sortie contenant le nom du fichier ne sera générée."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[netflix_titles_with_IMDB_edution_connection]"
+                  connectionManagerRefId="Package.ConnectionManagers[netflix_titles_with_IMDB_edution_connection]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat]"
+                  name="Sortie de source de fichier plat">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].ExternalColumns[id]"
+                      length="50"
+                      lineageId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[show_id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].ExternalColumns[show_id]"
+                      length="50"
+                      lineageId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[show_id]"
+                      name="show_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[type]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].ExternalColumns[type]"
+                      length="50"
+                      lineageId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[type]"
+                      name="type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[title]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].ExternalColumns[title]"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[title]"
+                      name="title"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[director]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].ExternalColumns[director]"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[director]"
+                      name="director"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[cast]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].ExternalColumns[cast]"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[cast]"
+                      name="cast"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[country]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].ExternalColumns[country]"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[country]"
+                      name="country"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[date_added]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].ExternalColumns[date_added]"
+                      length="50"
+                      lineageId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[date_added]"
+                      name="date_added"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[release_year]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].ExternalColumns[release_year]"
+                      length="50"
+                      lineageId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[release_year]"
+                      name="release_year"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[rating]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].ExternalColumns[rating]"
+                      length="50"
+                      lineageId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[rating]"
+                      name="rating"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[duration]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].ExternalColumns[duration]"
+                      length="50"
+                      lineageId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[duration]"
+                      name="duration"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[listed_in]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].ExternalColumns[listed_in]"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[listed_in]"
+                      name="listed_in"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[description]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].ExternalColumns[description]"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[description]"
+                      name="description"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[IMDB_numvotes]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].ExternalColumns[IMDB_numvotes]"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[IMDB_numvotes]"
+                      name="IMDB_numvotes"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[IMDB_rating]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].ExternalColumns[IMDB_rating]"
+                      length="50"
+                      lineageId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[IMDB_rating]"
+                      name="IMDB_rating"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indique si les données sont au format binaire."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].ExternalColumns[id]"
+                      dataType="wstr"
+                      length="50"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].ExternalColumns[show_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="show_id" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].ExternalColumns[type]"
+                      dataType="wstr"
+                      length="50"
+                      name="type" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].ExternalColumns[title]"
+                      dataType="wstr"
+                      length="50"
+                      name="title" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].ExternalColumns[director]"
+                      dataType="wstr"
+                      length="50"
+                      name="director" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].ExternalColumns[cast]"
+                      dataType="wstr"
+                      length="50"
+                      name="cast" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].ExternalColumns[country]"
+                      dataType="wstr"
+                      length="50"
+                      name="country" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].ExternalColumns[date_added]"
+                      dataType="wstr"
+                      length="50"
+                      name="date_added" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].ExternalColumns[release_year]"
+                      dataType="wstr"
+                      length="50"
+                      name="release_year" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].ExternalColumns[rating]"
+                      dataType="wstr"
+                      length="50"
+                      name="rating" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].ExternalColumns[duration]"
+                      dataType="wstr"
+                      length="50"
+                      name="duration" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].ExternalColumns[listed_in]"
+                      dataType="wstr"
+                      length="50"
+                      name="listed_in" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].ExternalColumns[description]"
+                      dataType="wstr"
+                      length="50"
+                      name="description" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].ExternalColumns[IMDB_numvotes]"
+                      dataType="wstr"
+                      length="50"
+                      name="IMDB_numvotes" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].ExternalColumns[IMDB_rating]"
+                      dataType="wstr"
+                      length="50"
+                      name="IMDB_rating" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie d'erreur de source de fichier plat]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source de fichier plat">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie d'erreur de source de fichier plat].Columns[Colonne de sortie d'erreur de source de fichier plat]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Colonne de sortie d'erreur de source de fichier plat"
+                      lineageId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie d'erreur de source de fichier plat].Columns[Colonne de sortie d'erreur de source de fichier plat]"
+                      name="Colonne de sortie d'erreur de source de fichier plat" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie d'erreur de source de fichier plat].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tâche de flux de données\Trier"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Trier;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Trie les données d'entrée en ordre croissant ou décroissant lorsque le tri ne peut pas être effectué à la source. Par exemple, triez les données de vente par 'id de client' avant leur enregistrement dans un fichier plat et leur diffusion dans un autre service. Remarque : nous ne recommandons pas cette transformation dans le cas de flux de données volumineux."
+              name="Trier"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si la transformation de tri supprime les lignes comportant des valeurs de tri en double."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le nombre maximal de threads à utiliser pour le tri."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Tâche de flux de données\Trier.Inputs[Entrée de tri]"
+                  name="Entrée de tri">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Trier.Inputs[Entrée de tri].Columns[id]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="id"
+                      lineageId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Trier.Inputs[Entrée de tri].Columns[show_id]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="show_id"
+                      lineageId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[show_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Trier.Inputs[Entrée de tri].Columns[type]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="type"
+                      lineageId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[type]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Trier.Inputs[Entrée de tri].Columns[title]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="title"
+                      lineageId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[title]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Trier.Inputs[Entrée de tri].Columns[director]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="director"
+                      lineageId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[director]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Trier.Inputs[Entrée de tri].Columns[cast]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="cast"
+                      lineageId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[cast]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Trier.Inputs[Entrée de tri].Columns[country]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="country"
+                      lineageId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[country]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Trier.Inputs[Entrée de tri].Columns[date_added]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="date_added"
+                      lineageId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[date_added]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Trier.Inputs[Entrée de tri].Columns[release_year]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="release_year"
+                      lineageId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[release_year]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Trier.Inputs[Entrée de tri].Columns[rating]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="rating"
+                      lineageId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[rating]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Trier.Inputs[Entrée de tri].Columns[duration]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="duration"
+                      lineageId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[duration]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Trier.Inputs[Entrée de tri].Columns[listed_in]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="listed_in"
+                      lineageId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[listed_in]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Trier.Inputs[Entrée de tri].Columns[description]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="description"
+                      lineageId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[description]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Trier.Inputs[Entrée de tri].Columns[IMDB_numvotes]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="IMDB_numvotes"
+                      lineageId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[IMDB_numvotes]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Trier.Inputs[Entrée de tri].Columns[IMDB_rating]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="IMDB_rating"
+                      lineageId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[IMDB_rating]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie les options de comparaison pour les données caractères."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Spécifie l'ordre de tri de la colonne."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri]"
+                  isSorted="true"
+                  name="Sortie de tri">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[id]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[id]"
+                      name="id"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[show_id]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[show_id]"
+                      name="show_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[show_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[type]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[type]"
+                      name="type">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[type]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[title]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[title]"
+                      name="title">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[title]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[director]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[director]"
+                      name="director">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[director]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[cast]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[cast]"
+                      name="cast">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[cast]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[country]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[country]"
+                      name="country">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[country]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[date_added]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[date_added]"
+                      name="date_added">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[date_added]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[release_year]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[release_year]"
+                      name="release_year">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[release_year]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[rating]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[rating]"
+                      name="rating">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[rating]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[duration]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[duration]"
+                      name="duration">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[duration]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[listed_in]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[listed_in]"
+                      name="listed_in">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[listed_in]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[description]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[description]"
+                      name="description">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[description]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[IMDB_numvotes]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[IMDB_numvotes]"
+                      name="IMDB_numvotes">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[IMDB_numvotes]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[IMDB_rating]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri].Columns[IMDB_rating]"
+                      name="IMDB_rating">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Spécifie l'identificateur de traçabilité de la colonne d'entrée associé à cette colonne de sortie."
+                          name="SortColumnId">#{Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat].Columns[IMDB_rating]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Tâche de flux de données.Paths[Sortie de multidiffusion 1]"
+              endId="Package\Tâche de flux de données\Dim_rating.Inputs[Entrée de destination OLE DB]"
+              name="Sortie de multidiffusion 1"
+              startId="Package\Tâche de flux de données\Multidiffusion.Outputs[Sortie de multidiffusion 1]" />
+            <path
+              refId="Package\Tâche de flux de données.Paths[Sortie de multidiffusion 2]"
+              endId="Package\Tâche de flux de données\Dim_information.Inputs[Entrée de destination OLE DB]"
+              name="Sortie de multidiffusion 2"
+              startId="Package\Tâche de flux de données\Multidiffusion.Outputs[Sortie de multidiffusion 2]" />
+            <path
+              refId="Package\Tâche de flux de données.Paths[Sortie de multidiffusion 3]"
+              endId="Package\Tâche de flux de données\Dim_production.Inputs[Entrée de destination OLE DB]"
+              name="Sortie de multidiffusion 3"
+              startId="Package\Tâche de flux de données\Multidiffusion.Outputs[Sortie de multidiffusion 3]" />
+            <path
+              refId="Package\Tâche de flux de données.Paths[Sortie de multidiffusion 4]"
+              endId="Package\Tâche de flux de données\Dim_date.Inputs[Entrée de destination OLE DB]"
+              name="Sortie de multidiffusion 4"
+              startId="Package\Tâche de flux de données\Multidiffusion.Outputs[Sortie de multidiffusion 4]" />
+            <path
+              refId="Package\Tâche de flux de données.Paths[Sortie de source de fichier plat]"
+              endId="Package\Tâche de flux de données\Trier.Inputs[Entrée de tri]"
+              name="Sortie de source de fichier plat"
+              startId="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution.Outputs[Sortie de source de fichier plat]" />
+            <path
+              refId="Package\Tâche de flux de données.Paths[Sortie de tri]"
+              endId="Package\Tâche de flux de données\Multidiffusion.Inputs[Multidiffusion entrée 1]"
+              name="Sortie de tri"
+              startId="Package\Tâche de flux de données\Trier.Outputs[Sortie de tri]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="200,42"
+          Id="Package\Tâche de flux de données"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Tâche de flux de données">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="234,42"
+          Id="Package\Tâche de flux de données\netflix_titles_with_IMDB_edution"
+          TopLeft="69.5,23.5" />
+        <NodeLayout
+          Size="101,42"
+          Id="Package\Tâche de flux de données\Trier"
+          TopLeft="135.5,230.5" />
+        <EdgeLayout
+          Id="Package\Tâche de flux de données.Paths[Sortie de source de fichier plat]"
+          TopLeft="186.25,65.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,165"
+              Start="0,0"
+              End="0,157.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,157.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="142,42"
+          Id="Package\Tâche de flux de données\Multidiffusion"
+          TopLeft="407.5,224.5" />
+        <EdgeLayout
+          Id="Package\Tâche de flux de données.Paths[Sortie de tri]"
+          TopLeft="236.5,248.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="171,0"
+              Start="0,0"
+              End="163.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="163.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="124,42"
+          Id="Package\Tâche de flux de données\Dim_date"
+          TopLeft="283.5,312.5" />
+        <EdgeLayout
+          Id="Package\Tâche de flux de données.Paths[Sortie de multidiffusion 4]"
+          TopLeft="456.166666666667,266.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-110.666666666667,46"
+              Start="0,0"
+              End="-110.666666666667,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.7075208913649" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.7075208913649"
+                    Point2="0,18.7075208913649"
+                    Point3="-4,18.7075208913649" />
+                  <mssgle:LineSegment
+                    End="-106.666666666667,18.7075208913649" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-106.666666666667,18.7075208913649"
+                    Point2="-110.666666666667,18.7075208913649"
+                    Point3="-110.666666666667,22.7075208913649" />
+                  <mssgle:LineSegment
+                    End="-110.666666666667,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="131,42"
+          Id="Package\Tâche de flux de données\Dim_rating"
+          TopLeft="569.5,311.5" />
+        <EdgeLayout
+          Id="Package\Tâche de flux de données.Paths[Sortie de multidiffusion 1]"
+          TopLeft="500.833333333333,266.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="134.166666666667,45"
+              Start="0,0"
+              End="134.166666666667,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.3008356545961" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.3008356545961"
+                    Point2="0,18.3008356545961"
+                    Point3="4,18.3008356545961" />
+                  <mssgle:LineSegment
+                    End="130.166666666667,18.3008356545961" />
+                  <mssgle:CubicBezierSegment
+                    Point1="130.166666666667,18.3008356545961"
+                    Point2="134.166666666667,18.3008356545961"
+                    Point3="134.166666666667,22.3008356545961" />
+                  <mssgle:LineSegment
+                    End="134.166666666667,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Tâche de flux de données\Dim_information"
+          TopLeft="276.5,139.5" />
+        <EdgeLayout
+          Id="Package\Tâche de flux de données.Paths[Sortie de multidiffusion 2]"
+          TopLeft="456.166666666667,224.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-101.166666666667,-43"
+              Start="0,0"
+              End="-101.166666666667,-35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-13.4874651810585" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-13.4874651810585"
+                    Point2="0,-17.4874651810585"
+                    Point3="-4,-17.4874651810585" />
+                  <mssgle:LineSegment
+                    End="-97.1666666666667,-17.4874651810585" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-97.1666666666667,-17.4874651810585"
+                    Point2="-101.166666666667,-17.4874651810585"
+                    Point3="-101.166666666667,-21.4874651810585" />
+                  <mssgle:LineSegment
+                    End="-101.166666666667,-35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Tâche de flux de données\Dim_production"
+          TopLeft="535.5,144.5" />
+        <EdgeLayout
+          Id="Package\Tâche de flux de données.Paths[Sortie de multidiffusion 3]"
+          TopLeft="500.833333333333,224.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="111.166666666667,-38"
+              Start="0,0"
+              End="111.166666666667,-30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-11.4540389972145" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-11.4540389972145"
+                    Point2="0,-15.4540389972145"
+                    Point3="4,-15.4540389972145" />
+                  <mssgle:LineSegment
+                    End="107.166666666667,-15.4540389972145" />
+                  <mssgle:CubicBezierSegment
+                    Point1="107.166666666667,-15.4540389972145"
+                    Point2="111.166666666667,-15.4540389972145"
+                    Point3="111.166666666667,-19.4540389972145" />
+                  <mssgle:LineSegment
+                    End="111.166666666667,-30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tâche de flux de données\Dim_date">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tâche de flux de données\Dim_rating">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tâche de flux de données\Dim_information">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tâche de flux de données\Dim_production">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

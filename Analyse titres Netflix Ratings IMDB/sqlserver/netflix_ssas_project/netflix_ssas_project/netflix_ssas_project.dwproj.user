@@ -1,0 +1,29 @@
+<AnalysisServicesUserConfiguration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Configurations>
+    <Configuration>
+      <Name>Development</Name>
+      <Options>
+        <UserIDs>
+          <ConfigurationSetting>
+            <Id>Netflix Titles Database</Id>
+            <Name>Netflix Titles Database</Name>
+            <Value xsi:type="xsd:string">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA67PuDRLH5kCYlR30G9Q5agAAAAAwAAAATgBlAHQAZgBsAGkAeAAgAFQAaQB0AGwAZQBzACAARABhAHQAYQBiAGEAcwBlAAAAEGYAAAABAAAgAAAAFWxRi9KXGIckeMruTyi9xbd7xVwlREF2l4J5KgphoK8AAAAADoAAAAACAAAgAAAAOQLr5WbSMDyOsd+HIhv/fYGiKPItUfMlJ+a/fyroDiogAAAAxfd8+BHoxdAq47PthHndRytsW4jYK9gzi9pagb8p3fBAAAAAWX77nJxnm2hz7Vj3i7yXOXnqaN59Gl8eLQiO8/QFiAGwKYTmxfjGxevGNDPnt3ZZQOLMyTdxZd/xD8CXmqb8QA==</Value>
+          </ConfigurationSetting>
+        </UserIDs>
+        <UserPasswords>
+          <ConfigurationSetting>
+            <Id>Netflix Titles Database</Id>
+            <Name>Netflix Titles Database</Name>
+            <Value xsi:type="xsd:string">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA67PuDRLH5kCYlR30G9Q5agAAAAAwAAAATgBlAHQAZgBsAGkAeAAgAFQAaQB0AGwAZQBzACAARABhAHQAYQBiAGEAcwBlAAAAEGYAAAABAAAgAAAAYfOOPmTtmnSXBB8/dJM8Pp7WC/dukkpMaLacEu/S1ywAAAAADoAAAAACAAAgAAAAhizYxYJBuocwBbUUapQ2dFzn+/XDkOl9V3YQemGAZ/wgAAAAquYXvV+W2XVUSQ3zMe9zlZbK4ZbgJCpa3VzntBjLw11AAAAAkgUGYaPGunU7J+YtKxMVy0ZI22RPmq2zFWr8KqwS/dtjruI8sc8Vx8A7aHuaapIlsaYFR8EbxvX+/loVpVGqvg==</Value>
+          </ConfigurationSetting>
+        </UserPasswords>
+        <TargetServer>DESKTOP-EP6LIQN</TargetServer>
+        <TargetDatabase>netflix_ssas_project</TargetDatabase>
+        <StartObject>
+          <ObjectId></ObjectId>
+          <ObjectType>Current</ObjectType>
+        </StartObject>
+      </Options>
+    </Configuration>
+  </Configurations>
+</AnalysisServicesUserConfiguration>

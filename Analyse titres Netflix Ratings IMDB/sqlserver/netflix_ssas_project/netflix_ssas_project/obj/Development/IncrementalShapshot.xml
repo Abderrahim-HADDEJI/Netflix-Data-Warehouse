@@ -1,0 +1,82 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>netflix_ssas_project</Database>
+    <Server>DESKTOP-EP6LIQN</Server>
+    <ConnectionString>Data Source=DESKTOP-EP6LIQN;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>Default</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>nHB2gV74WSWZheqZznBC9OI7MhQ=29/12/2022 14:26:0229/12/2022 13:52:47</TimeStamp>
+        <ID>
+          <String>Netflix Titles Database</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>HX0fSh+5jE1V0Ac6duxURSVdYWw=29/12/2022 13:53:5529/12/2022 13:53:54</TimeStamp>
+        <ID>
+          <String>Netflix Titles Views</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>gw3XHo5uWRY2xCk6/14FHeLRn3o=29/12/2022 14:16:5629/12/2022 13:54:43</TimeStamp>
+        <ID>
+          <String>Dim Date</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>8g8rFMuFcRvik3Ta/lsJ1iwBR4g=29/12/2022 14:15:5829/12/2022 13:54:43</TimeStamp>
+        <ID>
+          <String>Dim Information</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>HDwRDUt2BrKvpD6q+UwzdLYlPQw=29/12/2022 14:16:2329/12/2022 13:54:43</TimeStamp>
+        <ID>
+          <String>Dim Rating</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>02riippb6U/n9rCYtWXjJRuE43s=29/12/2022 14:16:4229/12/2022 13:54:43</TimeStamp>
+        <ID>
+          <String>Dim Production</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>YhiCgq96NeAx0Tn5DdIp5z1wF6g=29/12/2022 14:15:2229/12/2022 14:09:33Wo/4OOwEKLNog1XLNUYmPGpxROU=29/12/2022 14:09:3429/12/2022 14:09:33</TimeStamp>
+        <ID>
+          <String>NetflixTitlesCube</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>qYUEXVz8g4QuhR44v2V//e10uoo=29/12/2022 13:51:4329/12/2022 13:51:43</TimeStamp>
+      <ID>
+        <String>netflix_ssas_project</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2022-12-29T13:28:20.393333Z</LastDeployed>
+</DeploymentSnapshot>

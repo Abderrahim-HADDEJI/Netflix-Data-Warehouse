@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32602.291
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "netflix_ssas_project", "netflix_ssas_project\netflix_ssas_project.dwproj", "{B344C56E-5330-4F33-AFBC-066C4FF376CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B344C56E-5330-4F33-AFBC-066C4FF376CB}.Development|Default.ActiveCfg = Development
+		{B344C56E-5330-4F33-AFBC-066C4FF376CB}.Development|Default.Build.0 = Development
+		{B344C56E-5330-4F33-AFBC-066C4FF376CB}.Development|Default.Deploy.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {04BB004B-A859-43F1-A885-7DF5066D8217}
+	EndGlobalSection
+EndGlobal

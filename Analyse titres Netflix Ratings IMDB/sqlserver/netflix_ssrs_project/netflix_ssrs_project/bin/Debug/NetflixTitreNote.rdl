@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report MustUnderstand="df" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:df="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition/defaultfontfamily">
+  <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="TitleInformation">
+      <ConnectionProperties>
+        <DataProvider>OLEDB-MD</DataProvider>
+        <ConnectString>Data Source=DESKTOP-EP6LIQN;Initial Catalog=netflix_ssas_project</ConnectString>
+        <IntegratedSecurity>true</IntegratedSecurity>
+      </ConnectionProperties>
+      <rd:SecurityType>Integrated</rd:SecurityType>
+      <rd:DataSourceID>4d93c9d7-f4c7-43fc-901b-ef2e6854e03a</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="informationInf">
+      <Query>
+        <DataSourceName>TitleInformation</DataSourceName>
+        <CommandText> SELECT NON EMPTY { [Measures].[Fact Title Nombre] } ON COLUMNS, NON EMPTY { ([Dim Information].[Information Id].[Information Id].ALLMEMBERS * [Dim Information].[Title].[Title].ALLMEMBERS * [Dim Information].[Type].[Type].ALLMEMBERS * [Dim Information].[Listed In].[Listed In].ALLMEMBERS * [Dim Information].[Description].[Description].ALLMEMBERS * [Dim Information].[Duration].[Duration].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM [NetflixTitlesCube] CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
+        <rd:DesignerState>
+          <QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <QuerySpecification xsi:type="MDXQuerySpecification">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Dim Information</DimensionName>
+                      <HierarchyName>Information Id</HierarchyName>
+                      <HierarchyUniqueName>[Dim Information].[Information Id]</HierarchyUniqueName>
+                      <LevelName>Information Id</LevelName>
+                      <UniqueName>[Dim Information].[Information Id].[Information Id]</UniqueName>
+                    </ID>
+                    <ItemCaption>Information Id</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Dim Information</DimensionName>
+                      <HierarchyName>Title</HierarchyName>
+                      <HierarchyUniqueName>[Dim Information].[Title]</HierarchyUniqueName>
+                      <LevelName>Title</LevelName>
+                      <UniqueName>[Dim Information].[Title].[Title]</UniqueName>
+                    </ID>
+                    <ItemCaption>Title</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Dim Information</DimensionName>
+                      <HierarchyName>Type</HierarchyName>
+                      <HierarchyUniqueName>[Dim Information].[Type]</HierarchyUniqueName>
+                      <LevelName>Type</LevelName>
+                      <UniqueName>[Dim Information].[Type].[Type]</UniqueName>
+                    </ID>
+                    <ItemCaption>Type</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Dim Information</DimensionName>
+                      <HierarchyName>Listed In</HierarchyName>
+                      <HierarchyUniqueName>[Dim Information].[Listed In]</HierarchyUniqueName>
+                      <LevelName>Listed In</LevelName>
+                      <UniqueName>[Dim Information].[Listed In].[Listed In]</UniqueName>
+                    </ID>
+                    <ItemCaption>Listed In</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Dim Information</DimensionName>
+                      <HierarchyName>Description</HierarchyName>
+                      <HierarchyUniqueName>[Dim Information].[Description]</HierarchyUniqueName>
+                      <LevelName>Description</LevelName>
+                      <UniqueName>[Dim Information].[Description].[Description]</UniqueName>
+                    </ID>
+                    <ItemCaption>Description</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Dim Information</DimensionName>
+                      <HierarchyName>Duration</HierarchyName>
+                      <HierarchyUniqueName>[Dim Information].[Duration]</HierarchyUniqueName>
+                      <LevelName>Duration</LevelName>
+                      <UniqueName>[Dim Information].[Duration].[Duration]</UniqueName>
+                    </ID>
+                    <ItemCaption>Duration</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>Fact Title Nombre</MeasureName>
+                      <UniqueName>[Measures].[Fact Title Nombre]</UniqueName>
+                    </ID>
+                    <ItemCaption>Fact Title Nombre</ItemCaption>
+                    <BackColor>true</BackColor>
+                    <ForeColor>true</ForeColor>
+                    <FontFamily>true</FontFamily>
+                    <FontSize>true</FontSize>
+                    <FontWeight>true</FontWeight>
+                    <FontStyle>true</FontStyle>
+                    <FontDecoration>true</FontDecoration>
+                    <FormattedValue>true</FormattedValue>
+                    <FormatString>true</FormatString>
+                  </Item>
+                </Items>
+              </Select>
+              <AutoExecute>false</AutoExecute>
+              <From>NetflixTitlesCube</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties>
+                <IncludeMemberValue>true</IncludeMemberValue>
+              </QueryProperties>
+            </QuerySpecification>
+            <Query>
+              <Statement> SELECT NON EMPTY { [Measures].[Fact Title Nombre] } ON COLUMNS, NON EMPTY { ([Dim Information].[Information Id].[Information Id].ALLMEMBERS * [Dim Information].[Title].[Title].ALLMEMBERS * [Dim Information].[Type].[Type].ALLMEMBERS * [Dim Information].[Listed In].[Listed In].ALLMEMBERS * [Dim Information].[Description].[Description].ALLMEMBERS * [Dim Information].[Duration].[Duration].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM [NetflixTitlesCube] CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement>
+              <ParameterDefinitions />
+            </Query>
+          </QueryDefinition>
+        </rd:DesignerState>
+      </Query>
+      <Fields>
+        <Field Name="Information_Id">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Information].[Information Id].[Information Id]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Title">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Information].[Title].[Title]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Type">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Information].[Type].[Type]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Listed_In">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Information].[Listed In].[Listed In]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Description">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Information].[Description].[Description]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Duration">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Information].[Duration].[Duration]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Fact_Title_Nombre">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Fact Title Nombre]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DateInf">
+      <Query>
+        <DataSourceName>TitleInformation</DataSourceName>
+        <CommandText> SELECT NON EMPTY { [Measures].[Fact Title Nombre] } ON COLUMNS, NON EMPTY { ([Dim Date].[Date Id].[Date Id].ALLMEMBERS * [Dim Date].[Date Added].[Date Added].ALLMEMBERS * [Dim Date].[Release Year].[Release Year].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM [NetflixTitlesCube] CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
+        <rd:DesignerState>
+          <QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <QuerySpecification xsi:type="MDXQuerySpecification">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Dim Date</DimensionName>
+                      <HierarchyName>Date Id</HierarchyName>
+                      <HierarchyUniqueName>[Dim Date].[Date Id]</HierarchyUniqueName>
+                      <LevelName>Date Id</LevelName>
+                      <UniqueName>[Dim Date].[Date Id].[Date Id]</UniqueName>
+                    </ID>
+                    <ItemCaption>Date Id</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Dim Date</DimensionName>
+                      <HierarchyName>Date Added</HierarchyName>
+                      <HierarchyUniqueName>[Dim Date].[Date Added]</HierarchyUniqueName>
+                      <LevelName>Date Added</LevelName>
+                      <UniqueName>[Dim Date].[Date Added].[Date Added]</UniqueName>
+                    </ID>
+                    <ItemCaption>Date Added</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Dim Date</DimensionName>
+                      <HierarchyName>Release Year</HierarchyName>
+                      <HierarchyUniqueName>[Dim Date].[Release Year]</HierarchyUniqueName>
+                      <LevelName>Release Year</LevelName>
+                      <UniqueName>[Dim Date].[Release Year].[Release Year]</UniqueName>
+                    </ID>
+                    <ItemCaption>Release Year</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>Fact Title Nombre</MeasureName>
+                      <UniqueName>[Measures].[Fact Title Nombre]</UniqueName>
+                    </ID>
+                    <ItemCaption>Fact Title Nombre</ItemCaption>
+                    <BackColor>true</BackColor>
+                    <ForeColor>true</ForeColor>
+                    <FontFamily>true</FontFamily>
+                    <FontSize>true</FontSize>
+                    <FontWeight>true</FontWeight>
+                    <FontStyle>true</FontStyle>
+                    <FontDecoration>true</FontDecoration>
+                    <FormattedValue>true</FormattedValue>
+                    <FormatString>true</FormatString>
+                  </Item>
+                </Items>
+              </Select>
+              <AutoExecute>false</AutoExecute>
+              <From>NetflixTitlesCube</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties>
+                <IncludeMemberValue>true</IncludeMemberValue>
+              </QueryProperties>
+            </QuerySpecification>
+            <Query>
+              <Statement> SELECT NON EMPTY { [Measures].[Fact Title Nombre] } ON COLUMNS, NON EMPTY { ([Dim Date].[Date Id].[Date Id].ALLMEMBERS * [Dim Date].[Date Added].[Date Added].ALLMEMBERS * [Dim Date].[Release Year].[Release Year].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM [NetflixTitlesCube] CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement>
+              <ParameterDefinitions />
+            </Query>
+          </QueryDefinition>
+        </rd:DesignerState>
+      </Query>
+      <Fields>
+        <Field Name="Date_Id">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Date].[Date Id].[Date Id]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Date_Added">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Date].[Date Added].[Date Added]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Release_Year">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Date].[Release Year].[Release Year]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Fact_Title_Nombre">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Fact Title Nombre]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="ProductionInf">
+      <Query>
+        <DataSourceName>TitleInformation</DataSourceName>
+        <CommandText> SELECT NON EMPTY { [Measures].[Fact Title Nombre] } ON COLUMNS, NON EMPTY { ([Dim Production].[Production Id].[Production Id].ALLMEMBERS * [Dim Production].[Director].[Director].ALLMEMBERS * [Dim Production].[Cast].[Cast].ALLMEMBERS * [Dim Production].[Country].[Country].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM [NetflixTitlesCube] CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
+        <rd:DesignerState>
+          <QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <QuerySpecification xsi:type="MDXQuerySpecification">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Dim Production</DimensionName>
+                      <HierarchyName>Production Id</HierarchyName>
+                      <HierarchyUniqueName>[Dim Production].[Production Id]</HierarchyUniqueName>
+                      <LevelName>Production Id</LevelName>
+                      <UniqueName>[Dim Production].[Production Id].[Production Id]</UniqueName>
+                    </ID>
+                    <ItemCaption>Production Id</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Dim Production</DimensionName>
+                      <HierarchyName>Director</HierarchyName>
+                      <HierarchyUniqueName>[Dim Production].[Director]</HierarchyUniqueName>
+                      <LevelName>Director</LevelName>
+                      <UniqueName>[Dim Production].[Director].[Director]</UniqueName>
+                    </ID>
+                    <ItemCaption>Director</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Dim Production</DimensionName>
+                      <HierarchyName>Cast</HierarchyName>
+                      <HierarchyUniqueName>[Dim Production].[Cast]</HierarchyUniqueName>
+                      <LevelName>Cast</LevelName>
+                      <UniqueName>[Dim Production].[Cast].[Cast]</UniqueName>
+                    </ID>
+                    <ItemCaption>Cast</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Dim Production</DimensionName>
+                      <HierarchyName>Country</HierarchyName>
+                      <HierarchyUniqueName>[Dim Production].[Country]</HierarchyUniqueName>
+                      <LevelName>Country</LevelName>
+                      <UniqueName>[Dim Production].[Country].[Country]</UniqueName>
+                    </ID>
+                    <ItemCaption>Country</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>Fact Title Nombre</MeasureName>
+                      <UniqueName>[Measures].[Fact Title Nombre]</UniqueName>
+                    </ID>
+                    <ItemCaption>Fact Title Nombre</ItemCaption>
+                    <BackColor>true</BackColor>
+                    <ForeColor>true</ForeColor>
+                    <FontFamily>true</FontFamily>
+                    <FontSize>true</FontSize>
+                    <FontWeight>true</FontWeight>
+                    <FontStyle>true</FontStyle>
+                    <FontDecoration>true</FontDecoration>
+                    <FormattedValue>true</FormattedValue>
+                    <FormatString>true</FormatString>
+                  </Item>
+                </Items>
+              </Select>
+              <AutoExecute>false</AutoExecute>
+              <From>NetflixTitlesCube</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties>
+                <IncludeMemberValue>true</IncludeMemberValue>
+              </QueryProperties>
+            </QuerySpecification>
+            <Query>
+              <Statement> SELECT NON EMPTY { [Measures].[Fact Title Nombre] } ON COLUMNS, NON EMPTY { ([Dim Production].[Production Id].[Production Id].ALLMEMBERS * [Dim Production].[Director].[Director].ALLMEMBERS * [Dim Production].[Cast].[Cast].ALLMEMBERS * [Dim Production].[Country].[Country].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM [NetflixTitlesCube] CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement>
+              <ParameterDefinitions />
+            </Query>
+          </QueryDefinition>
+        </rd:DesignerState>
+      </Query>
+      <Fields>
+        <Field Name="Production_Id">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Production].[Production Id].[Production Id]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Director">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Production].[Director].[Director]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Cast">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Production].[Cast].[Cast]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Country">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Production].[Country].[Country]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Fact_Title_Nombre">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Fact Title Nombre]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="RatingInf">
+      <Query>
+        <DataSourceName>TitleInformation</DataSourceName>
+        <CommandText> SELECT NON EMPTY { [Measures].[Fact Title Nombre] } ON COLUMNS, NON EMPTY { ([Dim Rating].[Rating Id].[Rating Id].ALLMEMBERS * [Dim Rating].[Rating].[Rating].ALLMEMBERS * [Dim Rating].[IMDB Numvotes].[IMDB Numvotes].ALLMEMBERS * [Dim Rating].[IMDB Rating].[IMDB Rating].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM [NetflixTitlesCube] CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
+        <rd:DesignerState>
+          <QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <QuerySpecification xsi:type="MDXQuerySpecification">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Dim Rating</DimensionName>
+                      <HierarchyName>Rating Id</HierarchyName>
+                      <HierarchyUniqueName>[Dim Rating].[Rating Id]</HierarchyUniqueName>
+                      <LevelName>Rating Id</LevelName>
+                      <UniqueName>[Dim Rating].[Rating Id].[Rating Id]</UniqueName>
+                    </ID>
+                    <ItemCaption>Rating Id</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Dim Rating</DimensionName>
+                      <HierarchyName>Rating</HierarchyName>
+                      <HierarchyUniqueName>[Dim Rating].[Rating]</HierarchyUniqueName>
+                      <LevelName>Rating</LevelName>
+                      <UniqueName>[Dim Rating].[Rating].[Rating]</UniqueName>
+                    </ID>
+                    <ItemCaption>Rating</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Dim Rating</DimensionName>
+                      <HierarchyName>IMDB Numvotes</HierarchyName>
+                      <HierarchyUniqueName>[Dim Rating].[IMDB Numvotes]</HierarchyUniqueName>
+                      <LevelName>IMDB Numvotes</LevelName>
+                      <UniqueName>[Dim Rating].[IMDB Numvotes].[IMDB Numvotes]</UniqueName>
+                    </ID>
+                    <ItemCaption>IMDB Numvotes</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Dim Rating</DimensionName>
+                      <HierarchyName>IMDB Rating</HierarchyName>
+                      <HierarchyUniqueName>[Dim Rating].[IMDB Rating]</HierarchyUniqueName>
+                      <LevelName>IMDB Rating</LevelName>
+                      <UniqueName>[Dim Rating].[IMDB Rating].[IMDB Rating]</UniqueName>
+                    </ID>
+                    <ItemCaption>IMDB Rating</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>Fact Title Nombre</MeasureName>
+                      <UniqueName>[Measures].[Fact Title Nombre]</UniqueName>
+                    </ID>
+                    <ItemCaption>Fact Title Nombre</ItemCaption>
+                    <BackColor>true</BackColor>
+                    <ForeColor>true</ForeColor>
+                    <FontFamily>true</FontFamily>
+                    <FontSize>true</FontSize>
+                    <FontWeight>true</FontWeight>
+                    <FontStyle>true</FontStyle>
+                    <FontDecoration>true</FontDecoration>
+                    <FormattedValue>true</FormattedValue>
+                    <FormatString>true</FormatString>
+                  </Item>
+                </Items>
+              </Select>
+              <AutoExecute>false</AutoExecute>
+              <From>NetflixTitlesCube</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties>
+                <IncludeMemberValue>true</IncludeMemberValue>
+              </QueryProperties>
+            </QuerySpecification>
+            <Query>
+              <Statement> SELECT NON EMPTY { [Measures].[Fact Title Nombre] } ON COLUMNS, NON EMPTY { ([Dim Rating].[Rating Id].[Rating Id].ALLMEMBERS * [Dim Rating].[Rating].[Rating].ALLMEMBERS * [Dim Rating].[IMDB Numvotes].[IMDB Numvotes].ALLMEMBERS * [Dim Rating].[IMDB Rating].[IMDB Rating].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM [NetflixTitlesCube] CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement>
+              <ParameterDefinitions />
+            </Query>
+          </QueryDefinition>
+        </rd:DesignerState>
+      </Query>
+      <Fields>
+        <Field Name="Rating_Id">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Rating].[Rating Id].[Rating Id]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Rating">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Rating].[Rating].[Rating]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IMDB_Numvotes">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Rating].[IMDB Numvotes].[IMDB Numvotes]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IMDB_Rating">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Dim Rating].[IMDB Rating].[IMDB Rating]" /&gt;</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Fact_Title_Nombre">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Fact Title Nombre]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Rectangle Name="Rectangle1">
+            <KeepTogether>true</KeepTogether>
+            <Top>0.47215cm</Top>
+            <Left>2.13995cm</Left>
+            <Height>11.17834cm</Height>
+            <Width>29.73104cm</Width>
+            <Style>
+              <Border>
+                <Color>DimGray</Color>
+                <Style>Solid</Style>
+                <Width>2pt</Width>
+              </Border>
+              <BackgroundColor>White</BackgroundColor>
+            </Style>
+          </Rectangle>
+        </ReportItems>
+        <Height>4.65625in</Height>
+        <Style />
+      </Body>
+      <Width>12.92558in</Width>
+      <Page>
+        <PageHeader>
+          <Height>3.63995cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Image Name="Netflix">
+              <Source>Embedded</Source>
+              <Value>netflix</Value>
+              <Sizing>FitProportional</Sizing>
+              <Top>0.44979cm</Top>
+              <Left>2.13995cm</Left>
+              <Height>2.62819cm</Height>
+              <Width>5.78625cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Image>
+            <Image Name="Iimdb_logo">
+              <Source>Embedded</Source>
+              <Value>imbd</Value>
+              <Sizing>FitProportional</Sizing>
+              <Top>0.44979cm</Top>
+              <Left>26.64037cm</Left>
+              <Height>2.62819cm</Height>
+              <Width>5.23062cm</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Image>
+            <Textbox Name="Textbox1">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Rapport</Value>
+                      <Style>
+                        <FontSize>24pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>0.44979cm</Top>
+              <Left>16.24224cm</Left>
+              <Height>1.235cm</Height>
+              <Width>3.50542cm</Width>
+              <ZIndex>2</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox2">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Netflix Titres Vote</Value>
+                      <Style>
+                        <FontSize>36pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>Red</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox2</rd:DefaultName>
+              <Top>1.68479cm</Top>
+              <Left>12.08828cm</Left>
+              <Height>1.77877cm</Height>
+              <Width>11.15188cm</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <BackgroundColor>White</BackgroundColor>
+          </Style>
+        </PageHeader>
+        <PageFooter>
+          <Height>0.92604cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
+        <PageHeight>29.7cm</PageHeight>
+        <PageWidth>21cm</PageWidth>
+        <LeftMargin>2cm</LeftMargin>
+        <RightMargin>2cm</RightMargin>
+        <TopMargin>2cm</TopMargin>
+        <BottomMargin>2cm</BottomMargin>
+        <ColumnSpacing>0.13cm</ColumnSpacing>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>4</NumberOfColumns>
+      <NumberOfRows>2</NumberOfRows>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
+  <EmbeddedImages>
+    <EmbeddedImage Name="netflix">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAABLAAAAIcCAIAAABpTcA3AABTyUlEQVR42uzd+29j17nm+edZa29SUqmqXBeX7So7duwkxzlJTl+mgUZPD2aA+WEGmL94gJ4BZtDoBuaC0yd9nMTnOImv5XJdXRddSO6919s/bFKluoiiJKpMVX0/MIJEocjNRVJeD9da7+uPbrwvAAAAAMCbJzEEAAAAAEAgBAAAAAAQCAEAAAAABEIAAAAAAIEQAAAAAEAgBAAAAAAQCAEAAAAABEIAAAAAAIEQAAAAAEAgBAAAAAAQCAEAAAAABEIAAAAAAIEQAAAAAEAgBAAAAAAQCAEAAAAABEIAAAAAAIEQAAAAAEAgBAAAAAAQCAEAAAAABEIAAAAAAIEQAAAAAEAgBAAAAAAQCAEAAAAABEIAAAAAIBACAAAAAAiEAAAAAAACIQAAAACAQAgAAAAAIBACAAAAAAiEAAAAAAACIQAAAACAQAgAAAAAIBACAAAAAAiEAAAAAAACIQAAAACAQAgAAAAAIBACAAAAAAiEAAAAAAACIQAAAACAQAgAAAAAIBACAAAAAAiEAAAAAAACIQAAAACAQAgAAAAAIBACAAAAAAiEAAAAAAACIQAAAAAQCAEAAAAABEIAAAAAAIEQAAAAAEAgBAAAAAAQCAEAAAAABEIAAAAAAIEQAAAAAEAgBAAAAAAQCAEAAAAABEIAAAAAAIEQAAAAAEAgBAAAAAAQCAEAAAAABEIAAAAAAIEQAAAAAEAgBAAAAAAQCAEAAAAABEIAAAAAAIEQAAAAAEAgBAAAAAAQCAEAAAAABEIAAAAAAIEQAAAAAEAgBAAAAAACIQAAAACAQAgAAAAAIBACAAAAAAiEAAAAAAACIQAAAACAQAgAAAAAIBACAAAAAAiEAAAAAAACIQAAAACAQAgAAAAAIBACAAAAAAiEAAAAAAACIQAAAACAQAgAAAAAIBACAAAAAAiEAAAAAAACIQAAAACAQAgA
+AAAAIBACAAAAAAiEAAAAAAACIQAAAACAQAgAAAAAIBACAAAAAIEQAAAAAEAgBAAAAAAQCAEAAAAABEIAAAAAAIEQAAAAAEAgBAAAAAAQCAEAAAAABEIAAAAAAIEQAAAAAEAgBAAAAAAQCAEAAAAABEIAAAAAAIEQAAAAAEAgBAAAAAAQCAEAAAAABEIAAAAAAIEQAAAAAEAgBAAAAAAQCAEAAAAABEIAAAAAAIEQAAAAAEAgBAAAAAAQCAEAAAAABEIAAAAAIBACAAAAAAiEAAAAAAACIQAAAACAQAgAAAAAIBACAAAAAAiEAAAAAAACIQAAAACAQAgAAAAAIBACAAAAAAiEAAAAAAACIQAAAACAQAgAAAAAIBACAAAAAAiEAAAAAAACIQAAAACAQAgAAAAAIBACAAAAAAiEAAAAAAACIQAAAACAQAgAAAAAIBACAAAAAAiEAAAAAAACIQAAAAAQCAEAAAAABEIAAAAAAIEQAAAAAEAgBAAAAAAQCAEAAAAABEIAAAAAAIEQAAAAAEAgBAAAAAAQCAEAAAAABEIAAAAAAIEQAAAAAEAgBAAAAAAQCAEAAAAABEIAAAAAAIEQAAAAAEAgBAAAAAAQCAEAAAAABEIAAAAAAIEQAAAAAEAgBAAAAAAQCAEAAAAABEIAAAAAAIEQAAAAAEAgBAAAAAACIQAAAACAQAgAAAAAIBACAAAAAAiEAAAAAAACIQAAAACAQAgAAAAAIBACAAAAAAiEAAAAAAACIQAAAACAQAgAAAAAIBACAAAAAAiEAAAAAAACIQAAAACAQAgAAAAAIBACAAAAAAiEAAAAAAACIQAAAACAQAgAAAAAIBACAAAAAAiEAAAAAAACIQAAAACAQAgAAAAAIBACAAAAAIEQAAAAAEAgBAAAAAAQCAEAAAAABEIAAAAAAIEQAAAAAEAgBAAAAAAQCAEAAAAABEIAAAAAAIEQAAAAAEAgBAAAAAAQCAEAAAAABEIAAAAA
+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
+3RGlzThaHNeXxy4y4JnkkD3eH6kF8OmxemMOzaw+u0jT0CSiiedpDFtPAk9D86Qbk3Sp6GIp00G9lBQTRbO0fbTeV6rFw0E6kDeL/susHEjfTvwkuWVIPQACIQC8VF70cujDM/vAGqSpwsurNHs/jdP2atntwL6b9V3rvTQOYT/LsrHONxukR9nDKRPh6hmkHGMCbOPZxogDOPFn/MQxKssprlbqakF+8mJ3XlJoInXyD40n09SG7vQq0obiaomN2p53UZncLJpEZKmX7lsH0qdd3E9xu/HPSdmvRUNdACAQAnib1ZXfftLjpPvJu/aViA3FE3kmzey7jb+Z+GFys9ix+SD7y6lvNt63e+nsbSdiMQag8cnz6w7bcnrpUwCcuzgpNx7uVo0X+5XiqFM00kGKW026UKIJXS5xvY+LMc6j760rJf5uHh/32oo4sG41acealLg6RFt7O/HzD4BACAAv1WH9bZAeZP9pknrpPUWKeCLveQyEN1rXGdxtqAn9nP311E+SL5TYeMZ9ZbXMyDoPeA1/Ffj8Hq1Is6R9+eesFG5D75S408RWUakDNqwrQzxO8VEfF0ocJN3MaWZdCN1rxsk0HCAE8Eb+Rv3t9d/wLgB4s9QjPZPQxRKbEa0kaQjVjZ1z+8DjltHah7Oz95MGjYMBWbQBOPG3SizNlcmhVpFDsdgx3oQ2QpOIHCrWzA6pkXppO3sufr0AeCNRIQTw5qlLrv2kh9mdPFhamsGQdDQRfuwIKjWhCXU+AKf/VvHTybCzZovupvWfitRZw+IY8mFJsJGm5Uz9hAGAQAgA57Z6y6ENaaKj031H7e+fHh/mFz5lBOCv53eLTultU+uBcSxDWvQTBkAgBIBXLi0t18h7AM49E56AXzQA3sYFFQC88VikAQAAEAgBAAAAAARCAAAAAACBEAAAAABAIAQAAAAAEAgBAAAAgEAIAAAAACAQAgAAAAAIhAAAAAAAAiEAAAAAgEAIAAAAACAQ
+AgAAAAAIhAAAAAAAAiEAAAAAgEAIAAAAACAQAgAAAAAIhAAAAAAAAiEAAAAAgEAIAAAAACAQAgAAAAAIhAAAAAAAAiEAAAAAgEAIAAAAACAQAgAAAAAIhAAAAAAAAiEAAAAAgEAIAAAAACAQAgAAAAAIhAAAAAAAAiEAAAAAEAgBAAAAAARCAAAAAACBEAAAAABAIAQAAAAAEAgBAAAAAARCAAAAAACBEAAAAABAIAQAAAAAEAgBAAAAAARCAAAAAACBEAAAAABAIAQAAAAAEAgBAAAAAARCAAAAAACBEAAAAABAIAQAAAAAEAgBAAAAAARCAAAAAACBEAAAAABAIAQAAAAAEAgBAAAAAARCAAAAAACBEAAAAAAIhAAAAAAAAiEAAAAAgEAIAAAAACAQAgAAAAAIhAAAAAAAAiEAAAAAgEAIAAAAACAQAgAAAAAIhAAAAAAAAiEAAAAAgEAIAAAAACAQAgAAAAAIhAAAAAAAAiEAAAAAgEAIAAAAACAQAgAAAAAIhAAAAAAAAiEAAAAAgEAIAAAAACAQAgAAAAAIhAAAAAAAAiEAAAAAgEAIAAAAACAQAgAAAACBEAAAAABAIAQAAAAAEAgBAAAAAARCAAAAAACBEAAAAABAIAQAAAAAEAgBAAAAAARCAAAAAACBEAAAAABAIAQAAAAAEAgBAAAAAARCAAAAAACBEAAAAABAIAQAAAAAEAgBAAAAAARCAAAAAACBEAAAAABAIAQAAAAAEAgBAAAAAARCAAAAAACBEAAAAABAIAQAAAAAEAgBAAAAgEAIAAAAACAQAgAAAAAIhAAAAAAAAiEAAAAAgEAIAAAAACAQAgAAAAAIhAAAAAAAAiEAAAAAgEAIAAAAACAQAgAAAAAIhAAAAAAAAiEAAAAAgEAIAAAAACAQAgAAAAAIhAAAAAAAAiEAAAAAgEAIAAAAACAQAgAAAAAIhAAAAAAAAiEAAAAAgEAIAAAAACAQAgAAAAAIhAAA
+AABAIOQtAAAAAAACIQAAAACAQAgAAAAAIBACAAAAAAiEAAAAAAACIQAAAACAQAgAAAAAIBACAAAAAAiEAAAAAAACIQAAAACAQAgAAAAAIBACAAAAAAiEAAAAAAACIQAAAACAQAgAAAAAIBACAAAAAAiEAAAAAAACIQAAAACAQAgAAAAAIBACAAAAAAiEAAAAAAACIQAAAACAQAgAAAAAIBACAAAAAIEQAAAAAEAgBAAAAAAQCAEAAAAABEIAAAAAAIEQAAAAAEAgBAAAAAAQCAEAAAAABEIAAAAAAIEQAAAAAEAgBAAAAAAQCAEAAAAABEIAAAAAAIEQAAAAAEAgBAAAAAAQCAEAAAAABEIAAAAAAIEQAAAAAEAgBAAAAAAQCAEAAAAABEIAAAAAAIEQAAAAAEAgBAAAAAAQCAEAAACAQAgAAAAAIBACAAAAAAiEAAAAAAACIQAAAACAQAgAAAAAIBACAAAAAAiEAAAAAAACIQAAAACAQAgAAAAAIBACAAAAAAiEAAAAAAACIQAAAACAQAgAAAAAIBACAAAAAAiEAAAAAAACIQAAAACAQAgAAAAAIBACAAAAAAiEAAAAAAACIQAAAACAQAgAAAAAIBACAAAAAAiEAAAAAAACIQAAAAD89fr/7VwsGiR/LggAAAAASUVORK5CYII=</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="imbd">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>04208ff9-9216-47c5-8b1a-f10c5e7e21a3</rd:ReportID>
+</Report>
